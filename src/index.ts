@@ -3,6 +3,7 @@ import cors from "cors";
 import helmet from "helmet";
 import { env } from "./env.js";
 import { errorHandler, notFound } from "./lib/http.js";
+import { adminRouter } from "./routes/admin.js";
 import { docsRouter } from "./routes/docs.js";
 import { waitlistRouter } from "./routes/waitlist.js";
 
@@ -18,6 +19,7 @@ app.get("/health", (_req, res) => {
 });
 
 app.use("/docs", docsRouter);
+app.use("/admin", adminRouter);
 app.use("/waitlist", waitlistRouter);
 app.use(notFound);
 app.use(errorHandler);

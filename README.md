@@ -54,6 +54,24 @@ Returns `{ "count": number }`.
 ### `GET /health`
 Returns `{ "ok": true }`.
 
+## Admin (prototype)
+
+Admin endpoints are protected by a bearer token returned from `POST /admin/login`.
+
+Default admin (seeded in backend code):
+- Email: `admin@creatorum.local`
+- Password: `Admin@12345`
+
+Invite-code signup (also hard-coded in backend code):
+- `POST /admin/signup` with `inviteCode`: `CREATORUM-ADMIN-INVITE-2026`
+
+Admin routes:
+- `POST /admin/login` → `{ token }`
+- `POST /admin/signup`
+- `GET /admin/me`
+- `GET /admin/waitlist`
+- `GET /admin/waitlist/count`
+
 ## cURL
 
 Create an entry:
